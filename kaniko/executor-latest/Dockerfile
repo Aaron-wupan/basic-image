@@ -5,4 +5,3 @@ ENV DOCKER_CONFIG /kaniko/.docker
 
 COPY --from=plugin /kaniko/executor /usr/local/bin/kaniko
 RUN mkdir -p /kaniko/.docker/
-COPY config.json /kaniko/.docker/
