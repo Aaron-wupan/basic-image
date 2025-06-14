@@ -1,8 +1,8 @@
-FROM sonarsource/sonar-scanner-cli:11 as sonar
+FROM sonarsource/sonar-scanner-cli:latest as sonar
 
-FROM moby/buildkit:v0.22.0 as buildkit
+FROM moby/buildkit:latest as buildkit
 
-FROM jenkins/jnlp-agent-maven:jdk11
+FROM jenkins/jnlp-agent-docker:latest
 
 COPY --from=sonar /opt/sonar-scanner /opt/sonar-scanner
 ENV PATH="/opt/sonar-scanner/bin:${PATH}"
